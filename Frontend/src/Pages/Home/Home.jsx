@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="p-h h-screen flex flex-col items-center justify-center">
       {/* Glass Effect Box with Shine Line Animation */}
-      <div className="w-3/4 md:w-3/4 lg:w-2/3 bg-white bg-opacity-0 backdrop-blur-lg rounded-lg shadow-lg p-8 text-center mb-8 relative border border-white border-opacity-50">
+      <div className="w-3/4 md:w-3/4 lg:w-2/3 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg p-8 text-center mb-8 pb-11 relative border border-white border-opacity-50">
         {/* Shine line on the top edge */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent animate-shine-line"></div>
 
@@ -37,7 +37,7 @@ const Home = () => {
         </p>
 
         <h2 className="text-3xl font-bold text-center text-blue-700 pt-4">
-          Register As
+          Login As
         </h2>
         <div className="pt-16">
           <Buttons />

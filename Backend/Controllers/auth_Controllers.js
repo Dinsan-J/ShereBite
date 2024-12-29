@@ -6,7 +6,8 @@ import generateTokenAndSetCookie from "../utils/jenerateToken.js";
 export const signupuser = async (req, res) => {
   try {
     console.log("Request body:", req.body); //  this is for debug
-    const { username, email, password, confirmpassword, role } = req.body;
+    const { username, email, password, confirmpassword, role, roleName } =
+      req.body;
     if (password !== confirmpassword) {
       return res.status(400).json({ error: "password do not match" });
     }
@@ -28,6 +29,7 @@ export const signupuser = async (req, res) => {
       email,
       password: hashedPassword,
       role,
+      roleName,
       profilePic: profilePic,
     });
 
@@ -41,6 +43,7 @@ export const signupuser = async (req, res) => {
         username: newUser.username,
         email: newUser.email,
         role: newUser.role,
+        roleName: newUser.roleName,
         profilePic: newUser.profilePic,
       });
     } else {
@@ -72,6 +75,7 @@ export const loginUser = async (req, res) => {
       _id: user._id,
       username: user.username,
       role: user.role,
+      roleName: user.roleName,
       profilePic: user.profilePic,
     });
   } catch (error) {
